@@ -7,7 +7,6 @@ const Cart = require('../models/cart');
 
 class CartController {
     //get me/store/courses
-   
     add(req, res, next) {
        var productId = req.params.id;
        var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
@@ -18,7 +17,9 @@ class CartController {
             cart.add(product, product.id);
             req.session.cart = cart;
             // console.log(req.session.cart);
-            res.redirect('/');
+            setTimeout(() => {
+                res.redirect('/');
+            }, 1000);
        });
       
     } 
