@@ -28,12 +28,11 @@ class CartController {
         var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
         cart.reduceByOne(productId);
         req.session.cart = cart;
-        res.redirect('/shop/shop-cart')
+        res.redirect('/shop/checkout')
     } 
     Plus(req, res, next){
         var productId = req.params.id;
         var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
-        
         cart.plusByOne(productId);
         req.session.cart = cart;
         res.redirect('/shop/checkout')

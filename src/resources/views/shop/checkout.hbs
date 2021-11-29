@@ -41,11 +41,38 @@
                                 <div class="d-flex align-items-center mt-2 mb-2">
                                     <span class="text-muted">{{this.item.price}}.000đ x
                                     </span>
-                                    <input style="width: 60px;
-                                    height: 38px;" type="text" class="form-control ml-2 border-danger" id="qtyUpdate" name="qtyUpdate"
-                                        value="{{this.qty}}">
-                                    <a  href="/add-to-cart/plus/{{this.item._id}}" style="font-weight: 700;padding: 4px !important; background-color: #007bff"
-                                        class="btn btn-outline-dark btn-number ml-1" id="update">Update</a>
+                                    {{!-- quantity cách 1 --}}
+                                    <div class="d-flex ml-2">
+                                        <span class="input-group-btn">
+                                            <a href="/add-to-cart/reduce/{{this.item._id}}"
+                                                class="btn btn-outline-secondary btn-number">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-dash-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z" />
+                                                </svg>
+                                            </a>
+                                        </span>
+                                        <span class="form-control text-center">{{this.qty}}</span>
+                                        <span class="input-group-btn">
+                                            <a href="/add-to-cart/plus/{{this.item._id}}" type="button"
+                                                class="btn btn-outline-secondary btn-number">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                    fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                                                </svg>
+                                            </a>
+                                        </span>
+                                    </div>
+
+                                    {{!-- quantity cách 2 --}}
+                                    {{!-- <input style="width: 60px;
+                                    height: 38px;" type="text" class="form-control ml-2 border-danger" id="qtyUpdate"
+                                        name="qtyUpdate" value="{{this.qty}}">
+                                    <a href="/add-to-cart/plus/{{this.item._id}}"
+                                        style="font-weight: 700;padding: 4px !important; background-color: #007bff"
+                                        class="btn btn-outline-dark btn-number ml-1" id="update">Update</a> --}}
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a type="button" href="/add-to-cart/remove/{{this.item._id}}"
@@ -56,23 +83,23 @@
                             </div>
                         </div>
                     </li>
-                </ul>
-                {{/each}}
-                <div class="list-group-item d-flex justify-content-between">
-                    <h5 class="text-success">Tổng tiền:</h4>
-                        <strong>{{ totalPrice }}.000 đ</strong>
-                </div>
-
-
-
-
-                {{!--
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Mã khuyến mãi">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-secondary">Xác nhận</button>
+                    </ul>
+                    {{/each}}
+                    <div class="list-group-item d-flex justify-content-between">
+                        <h5 class="text-success">Tổng tiền:</h4>
+                            <strong>{{ totalPrice }}.000 đ</strong>
                     </div>
-                </div> --}}
+
+
+
+
+                    {{!--
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Mã khuyến mãi">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-secondary">Xác nhận</button>
+                        </div>
+                    </div> --}}
 
             </div>
             <div class="col-md-7 order-md-2">
@@ -145,9 +172,12 @@
     var update = document.getElementById('update')
     console.log(qty, update)
 
-    {{!-- update.onclick = function () {
-        this.qty = qty.value;
-    } --}}
+    {
+        {
+            !--update.onclick = function () {
+                this.qty = qty.value;
+            } --}
+    }
     Validator({
         form: "#frmthanhtoan",
         rule: [
