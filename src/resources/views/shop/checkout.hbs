@@ -24,14 +24,14 @@
         {{#if products}}
         <div class="row">
             <div class="col-md-5 order-md-1 mb-4">
-                <h4 style="font-weight: bold;" class="d-flex justify-content-between align-items-center mb-3 text-info">
+                <h4 style="font-weight: 500;" class="d-flex justify-content-between align-items-center mb-3 text-dark">
                     Chi Tiết Đơn Hàng
                     {{!-- <span class="badge badge-secondary badge-pill">2</span> --}}
                 </h4>
                 {{#each products}}
-                <ul class="list-group mb-3">
+                <for class="list-group mb-3">
                     <li style="border: 1px solid #ccc;padding:8px; background-color: #fff;"
-                        class="d-flex align-items-center justify-content-between lh-condensed">
+                        class="d-flex align-items-center justify-content-around lh-condensed">
                         <div style="width: 110px; height: 120px" class="mr-2">
                             <img style="width: 100%; height: 100%" src="{{this.item.image}}"></img>
                         </div>
@@ -42,15 +42,15 @@
                                     <span class="text-muted">{{this.item.price}}.000đ x
                                     </span>
                                     <input style="width: 60px;
-                                    height: 38px;" type="text" class="form-control ml-2 border-danger" id="qty" name=""
-                                        value="1">
-                                    <a href="/add-to-cart/plus/{{this.item._id}}" style="font-weight: 700;padding: 4px !important; background-color: #007bff"
+                                    height: 38px;" type="text" class="form-control ml-2 border-danger" id="qtyUpdate" name="qtyUpdate"
+                                        value="{{this.qty}}">
+                                    <a  href="/add-to-cart/plus/{{this.item._id}}" style="font-weight: 700;padding: 4px !important; background-color: #007bff"
                                         class="btn btn-outline-dark btn-number ml-1" id="update">Update</a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a type="button" href="/add-to-cart/remove/{{this.item._id}}"
                                         class="btn btn-link">Xóa</a>
-                                    <span>Thành Tiền: <span style="font-weight: 500;">{{this.price}}.000 đ</span></span>
+                                    <span>Thành Tiền: <span style="font-weight: 500;">{{this.price}}.000đ</span></span>
 
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
 
             </div>
             <div class="col-md-7 order-md-2">
-                <h4 style="font-weight: bold;" class="mb-3 text-info">Người mua / Nhận Hàng</h4>
+                <h4 style="font-weight: 500;" class="mb-3 text-dark">Người mua / Nhận Hàng</h4>
                 <div style="background-color: #fff;
                 border: 1px solid #ccc;
                 padding: 14px 4px;" class="row">
@@ -145,9 +145,9 @@
     var update = document.getElementById('update')
     console.log(qty, update)
 
-    update.onclick = function () {
+    {{!-- update.onclick = function () {
         this.qty = qty.value;
-    }
+    } --}}
     Validator({
         form: "#frmthanhtoan",
         rule: [

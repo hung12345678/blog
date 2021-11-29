@@ -29,6 +29,7 @@ module.exports = function Cart(oldCart){
  
 
     this.plusByOne = function(id){
+       
         this.items[id].qty++;
         this.items[id].price += this.items[id].item.price;
         this.totalQty++;

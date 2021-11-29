@@ -36,6 +36,12 @@ class CartController {
         cart.plusByOne(productId);
         req.session.cart = cart;
         res.redirect('/shop/checkout')
+           //    res.json(req.body)
+        //    Course.updateOne({ _id: req.params.id }, req.body)
+        //    // redirect thêm key location trả về location me/store/courses tra network sẽ thấy
+        //    .then(() => res.redirect('/shop/checkout'))
+        //    .catch(next)
+
     } 
     remove(req, res, next){
         var productId = req.params.id;
