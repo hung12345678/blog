@@ -124,7 +124,7 @@ class ShopController {
                      `,
                 }
                 // console.log(mailOption);
-
+                //test
                 transporter.sendMail(mailOption, function (err, success) {
                     if (err) {
                         console.log("Lỗi!!!")
