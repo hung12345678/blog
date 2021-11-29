@@ -190,5 +190,12 @@ h2 {
   .hiden-mobile{
     display: none !important;
   }
+  .link-moblie{
+    padding: 0 !important;
+  }
+  .avarta{
+    width: 30px;
+    height: 30px;
+  }
 
 }
