@@ -19,7 +19,7 @@ class CartController {
             // console.log(req.session.cart);
             setTimeout(() => {
                 res.redirect('/');
-            }, 1000);
+            }, 0);
        });
       
     } 
