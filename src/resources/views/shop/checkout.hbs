@@ -15,7 +15,7 @@
         {{!-- <div id="charrge-error" class="alert alert danger hidden">
 
         </div> --}}
-         {{#if products}}
+        {{#if products}}
         <div class="row">
             <div class="col-md-5 order-md-1 mb-4">
                 <h4 style="font-weight: bold;" class="d-flex justify-content-between align-items-center mb-3 text-info">
@@ -24,7 +24,8 @@
                 </h4>
                 {{#each products}}
                 <ul class="list-group mb-3">
-                    <li style="border: 1px solid #ccc;padding:4px" class="d-flex align-items-center  lh-condensed">
+                    <li style="border: 1px solid #ccc;padding:4px; background-color: #fff;"
+                        class="d-flex align-items-center  lh-condensed">
                         <div style="width: 110px; height: 120px" class="mr-2">
                             <img style="width: 100%; height: 100%" src="{{this.item.image}}"></img>
                         </div>
@@ -70,22 +71,23 @@
             </div>
             <div class="col-md-7 order-md-2">
                 <h4 style="font-weight: bold;" class="mb-3 text-info">Người mua / Nhận Hàng</h4>
-
-                <div class="row">
-                    <div class="form-item col-md-12">
-                        <label for="kh_ten">Họ tên</label>
+                <div style="background-color: #fff;
+                border: 1px solid #ccc;
+                padding: 14px 4px;" class="row">
+                    <div class="form-item col-md-12 mb-3">
+                        <label style="font-weight: 500;" for="kh_ten">Họ tên</label>
                         <input type="text" class="form-control" placeholder="Tên Người Nhận" name="fullname"
                             id="fullname" required="">
                         <span class="form-item-note"></span>
                     </div>
-                    <div class="form-item col-md-12">
-                        <label for="kh_diachi">Địa chỉ</label>
+                    <div class="form-item col-md-12 mb-3">
+                        <label style="font-weight: 500;"  for="kh_diachi">Địa chỉ</label>
                         <input type="text" class="form-control" name="address" id="address"
                             placeholder="Địa Chỉ Nhận Hàng" value="" required="">
                         <span class="form-item-note"></span>
                     </div>
-                    <div class="form-item col-md-12">
-                        <label for="kh_dienthoai">Điện thoại</label>
+                    <div class="form-item col-md-12 mb-3">
+                        <label style="font-weight: 500;" for="kh_dienthoai">Điện thoại</label>
                         <input type="text" class="form-control" name="sdt" id="sdt" placeholder="Số Điện Thoại"
                             required="">
                         <span class="form-item-note"></span>
@@ -120,9 +122,9 @@
             <div class="mt-4 text-center">
                 <h2 class="mb-5 text-info">Không có sản phẩm nào trong giỏ hàng</h2>
                 <image src="http://localhost:3000/img/noproductfound.png"></image>
-                  <button style="font-siZe: 15px;" href="/" class="btn btn-info btn-lg btn-block mt-4" name="">
-                        Quay Lại Trang Chủ
-                  </button>
+                <button style="font-siZe: 15px;" href="/" class="btn btn-info btn-lg btn-block mt-4" name="">
+                    Quay Lại Trang Chủ
+                </button>
             </div>
             {{/if}}
         </div>
