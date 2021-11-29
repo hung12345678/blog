@@ -11,6 +11,7 @@ const OrderSchema = new Schema({
     address: {type: String, required: true},
     name: {type: String, required: true},
     sdt: {type: Number, required: true},
+    ghichu: {type: String},
 
 }, {
   timestamps: true,

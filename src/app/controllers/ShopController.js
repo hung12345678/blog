@@ -46,6 +46,7 @@ class ShopController {
             address: req.body.address,
             name: req.body.fullname,
             sdt: req.body.sdt,
+            ghichu: req.body.ghichu,
 
         })
 
@@ -116,6 +117,9 @@ class ShopController {
                     <div>
                         <h3 style="color:red">Tổng Tiền: `+ result.cart.totalPrice + `.000 Vnđ </h3> 
     
+                    </div> 
+                    <div>
+                        <span>Ghi Chú: `+ result.ghichu +` </span> 
                     </div> 
                      `,
                 }
