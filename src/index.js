@@ -82,15 +82,15 @@ app.engine(
 app.set('view engine', 'hbs');
 
 app.set('views', path.join(__dirname, 'resources', 'views')); 
-// console.log('path',path.join(__dirname,'resources/views'))
+// console.log('path',path.join(__dirname,'resources/views')
 
 //route init
 route(app);
 
-// app.listen(process.env.PORT || port, () => {
-//     console.log(`App listening at http://localhost:${port}`);
-// });
+app.listen(process.env.PORT || port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+});
 
-app.listen(process.env.PORT || port)
+// app.listen(process.env.PORT || port)
 
 //ghi chu

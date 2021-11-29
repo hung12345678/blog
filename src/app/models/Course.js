@@ -15,7 +15,6 @@ const Course = new Schema({
   imageitem2: { type: String, maxlength: 600 },
   imageitem3: { type: String, maxlength: 600 },
   imageitem4: { type: String, maxlength: 600 },
-  videoId: { type: String, required: true },
   // createDAt: {type: Date, default: Date.now},
   // UpadateDAt: {type: Date, default: Date.now},
   price: { type: Number },

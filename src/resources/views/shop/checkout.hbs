@@ -3,31 +3,51 @@
         <div class="checkout-success">
             <span>Đơn hàng đã được tạo thành công!!!</span>
         </div>
-        <div class="py-5 text-center">
-            <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
-            <h2 class="text-success">THANH TOÁN</h2>
-            <p class="lead">Vui lòng kiểm tra thông tin Khách hàng, thông tin Giỏ hàng trước khi Đặt hàng.</p>
+        <div style="background-color: #b6b9bd; padding: 4px 10px; " class="d-flex mb-4">
+            <div style="width:30px;" class="">
+                <i style="width:100%; height: 100%" class="fa fa-credit-card" aria-hidden="true"></i>
+            </div>
+            <div>
+                <span style="font-weight: 400;">/ Thông tin giỏ hàng của bạn</span>
+            </div>
         </div>
 
         {{!-- <div id="charrge-error" class="alert alert danger hidden">
 
         </div> --}}
+         {{#if products}}
         <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
-                {{#if products}}
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Giỏ hàng</span>
+            <div class="col-md-5 order-md-1 mb-4">
+                <h4 style="font-weight: bold;" class="d-flex justify-content-between align-items-center mb-3 text-info">
+                    Chi Tiết Đơn Hàng
                     {{!-- <span class="badge badge-secondary badge-pill">2</span> --}}
                 </h4>
                 {{#each products}}
                 <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">{{this.item.name}}</h6>
-                            <small class="text-muted">{{this.item.price}}.000 x {{this.qty}}
-                            </small>
+                    <li class="list-group-item d-flex align-items-center  lh-condensed">
+                        <div style="width: 110px; height: 120px" class="mr-2">
+                            <img style="width: 100%; height: 100%" src="{{this.item.image}}"></img>
                         </div>
-                        <span class="text-muted">{{this.price}}.000 đ</span>
+                        <div class="d-flex">
+                            <div>
+                                <h5 class="my-0">{{this.item.name}}</h5>
+                                <div class="d-flex align-items-center mt-2 mb-2">
+                                    <span class="text-muted">{{this.item.price}}.000đ x
+                                    </span>
+                                    <input style="width: 100px;
+                                    height: 38px;" type="text" class="form-control ml-2 border-danger" id="qty" name=""
+                                        value="1">
+                                    <a href="/add-to-cart/plus/{{this.item._id}}" style="font-weight: 700;"
+                                        class="btn btn-outline-secondary btn-number ml-2" id="update">Update</a>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <a type="button" href="/add-to-cart/remove/{{this.item._id}}"
+                                        class="btn btn-link">Xóa</a>
+                                    <span>Thành Tiền: <span style="font-weight: 500;">{{this.price}}.000 đ</span></span>
+
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 {{/each}}
@@ -36,7 +56,6 @@
                         <strong>{{ totalPrice }}.000 đ</strong>
                 </div>
 
-                {{/if}}
 
 
 
@@ -49,27 +68,26 @@
                 </div> --}}
 
             </div>
-            <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Thông tin khách hàng</h4>
+            <div class="col-md-7 order-md-2">
+                <h4 style="font-weight: bold;" class="mb-3 text-info">Người mua / Nhận Hàng</h4>
 
                 <div class="row">
                     <div class="form-item col-md-12">
                         <label for="kh_ten">Họ tên</label>
-                        <input type="text" class="form-control" placeholder="VD:Thanh Hùng" name="fullname"
+                        <input type="text" class="form-control" placeholder="Tên Người Nhận" name="fullname"
                             id="fullname" required="">
                         <span class="form-item-note"></span>
                     </div>
                     <div class="form-item col-md-12">
                         <label for="kh_diachi">Địa chỉ</label>
                         <input type="text" class="form-control" name="address" id="address"
-                            placeholder="VD: 45 Trương Định, Kp4, Phường Phước Mỹ, Tp Phan Rang - Tháp Chàm" value=""
-                            required="">
+                            placeholder="Địa Chỉ Nhận Hàng" value="" required="">
                         <span class="form-item-note"></span>
                     </div>
                     <div class="form-item col-md-12">
                         <label for="kh_dienthoai">Điện thoại</label>
-                        <input type="text" class="form-control" name="sdt" id="sdt"
-                            placeholder="Nhập số điện thoại ở đây ^^!" required="">
+                        <input type="text" class="form-control" name="sdt" id="sdt" placeholder="Số Điện Thoại"
+                            required="">
                         <span class="form-item-note"></span>
                     </div>
                 </div>
@@ -95,7 +113,18 @@
                 <hr class="mb-4">--}}
                 <button href="" class="btn btn-primary btn-lg btn-block mt-4" type="submit" name="btnDatHang">Đặt
                     hàng</button>
+                <a style="font-siZe: 15px;" href="/" class="btn btn-warning btn-lg btn-block mt-4" name="">Mua Thêm
+                    Bánh, Tiếp Tục Mua Hàng ^^</a>
             </div>
+            {{else}}
+            <div class="mt-4 text-center">
+                <h2 class="mb-5 text-info">Không có sản phẩm nào trong giỏ hàng</h2>
+                <image src="http://localhost:3000/img/noproductfound.png"></image>
+                  <button style="font-siZe: 15px;" href="/" class="btn btn-info btn-lg btn-block mt-4" name="">
+                        Quay Lại Trang Chủ
+                  </button>
+            </div>
+            {{/if}}
         </div>
     </form>
 </div>
@@ -104,10 +133,13 @@
 <script>
     var formCheckout = document.getElementById('frmthanhtoan');
     var charrgeError = document.getElementById('charrge-error')
-             
-   
- 
-   
+    var qty = document.getElementById('qty')
+    var update = document.getElementById('update')
+    console.log(qty, update)
+
+    update.onclick = function () {
+        this.qty = qty.value;
+    }
     Validator({
         form: "#frmthanhtoan",
         rule: [

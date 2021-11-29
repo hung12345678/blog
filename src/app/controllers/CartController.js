@@ -25,7 +25,6 @@ class CartController {
     Minus(req, res, next){
         var productId = req.params.id;
         var cart = new Cart(req.session.cart ? req.session.cart : {items: {}});
-        
         cart.reduceByOne(productId);
         req.session.cart = cart;
         res.redirect('/shop/shop-cart')
@@ -36,7 +35,7 @@ class CartController {
         
         cart.plusByOne(productId);
         req.session.cart = cart;
-        res.redirect('/shop/shop-cart')
+        res.redirect('/shop/checkout')
     } 
     remove(req, res, next){
         var productId = req.params.id;
@@ -44,7 +43,7 @@ class CartController {
         
         cart.removeItem(productId);
         req.session.cart = cart;
-        res.redirect('/shop/shop-cart')
+        res.redirect('/shop/checkout')
     }   
 
 }
