@@ -38,9 +38,7 @@ module.exports = function Cart(oldCart){
         // }
     };
 
-    this.replaceQty = function(id){
-        // this.items[id].qty;
-    }
+  
     this.removeItem = function(id){
         this.totalQty -= this.items[id].qty;
         this.totalPrice -= this.items[id].price;

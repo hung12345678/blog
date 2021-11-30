@@ -57,8 +57,8 @@ class ShopController {
                 let transporter = nodemailer.createTransport({
                     service: "gmail",
                     auth: {
-                        user: "thanhhung.it1993@gmail.com",
-                        pass: "P15110607h1993@",
+                        user: "thanhhung.lam1993@gmail.com",
+                        pass: "P15110607h1993!@#",
                     },
                     tls: {
                         rejectUnAuthorcatized: false,
@@ -81,7 +81,7 @@ class ShopController {
                 // console.log(content);
                 // console.log(array);
                 let mailOption = {
-                    from: "thanhhung.it1993@gmail.com",
+                    from: "thanhhung.lam1993@gmail.com",
                     to: "nguyenlamtuyetnhu03@gmail.com",
                     subject: "Test Mail",
                     cc: "vti.software03@gmail.com",
