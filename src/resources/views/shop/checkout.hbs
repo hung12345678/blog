@@ -42,7 +42,7 @@
                                     <span class="text-muted">{{this.item.price}}.000đ x
                                     </span>
                                     {{!-- quantity cách 1 --}}
-                                    <div class="d-flex ml-2">
+                                    <div class="d-flex align-items-center ml-2">
                                         <span class="input-group-btn">
                                             <a href="/add-to-cart/reduce/{{this.item._id}}"
                                                 class="btn btn-outline-secondary btn-number">
@@ -64,6 +64,7 @@
                                                 </svg>
                                             </a>
                                         </span>
+                                        <span class="ml-2">{{this.item.unit}}</span>
                                     </div>
 
                                     {{!-- quantity cách 2 --}}
@@ -126,9 +127,8 @@
                         <span class="form-item-note"></span>
                     </div>
                     <div class="form-item col-md-12 mb-3">
-                        <label style="font-weight: 500;" for="kh_dienthoai">Ghi chú</label>
-                        <input type="text" class="form-control" name="ghichu" id="ghichu">
-                        <span class="form-item-note"></span>
+                        <span style="font-weight: 500;" for="kh_dienthoai">Ghi chú</span>
+                        <textarea style="height: 100px;" type="textaria" class="form-control" name="ghichu" id="ghichu"></textarea>
                     </div>
                 </div>
                 {{!-- <h4 class="mb-3">Hình thức thanh toán</h4>
@@ -175,14 +175,7 @@
     var charrgeError = document.getElementById('charrge-error')
     var qty = document.getElementById('qty')
     var update = document.getElementById('update')
-    console.log(qty, update)
 
-    {
-        {
-            !--update.onclick = function () {
-                this.qty = qty.value;
-            } --}
-    }
     Validator({
         form: "#frmthanhtoan",
         rule: [

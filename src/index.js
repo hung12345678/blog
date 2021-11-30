@@ -15,6 +15,8 @@ const mongooses = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
+const bodyParser = require('body-parser');
+
 //connect to db
 
 // db.connect();

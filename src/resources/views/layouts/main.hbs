@@ -18,9 +18,36 @@
         </div>
         {{> footer}}
     </div>
+     <div class="icon-row">
+        <svg class="" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up-short"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5z" />
+        </svg>
+    </div>
+     <a class="img-phone" href="tel:+84948274217" class="icon-phone">
+       <img style="width: 100%; height: 100%" src="https://hinhanh_banhchung.hn.ss.bfcplatform.vn/images/phone.png" alt="phone">
+    </a>
     {{!-- đặt js ở đây để tăng tốc độ chạy của web --}}
+    
  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+<script>
+    var iconrow = document.querySelector('.icon-row')
+    document.onscroll = function (){
+        if(scrollY > 10){
+            iconrow.style.display = "block"
+        }
+        else{
+            iconrow.style.display = "none"; 
+        }
+    }
+    iconrow.onclick = function(){
+       document.body.scrollTop = 0;
+       document.documentElement.scrollTop = 0;  
+    }
+   
+</script>
