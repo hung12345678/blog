@@ -139,7 +139,7 @@ class ShopController {
                 res.redirect('/');
 
             })
-        }, 3000);
+        });
     }
 }
 module.exports = new ShopController();

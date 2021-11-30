@@ -192,12 +192,12 @@ h2 {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  animation: xoay linear 0.5s;
+  animation-iteration-count: infinite;
   box-shadow: 1px 1px #858883b5;
 }
 .img-phone:hover{
   opacity: 0.9;
-  animation: xoay linear 0.5s;
-  animation-iteration-count: infinite;
   cursor: pointer;
 }
 @keyframes xoay{
