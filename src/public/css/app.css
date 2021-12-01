@@ -235,5 +235,40 @@ h2 {
     width: 30px;
     height: 30px;
   }
+  .img-banh{
+    height: 170px;
+  }
+  .card{
+    margin-top: 0;
+    background-color: #ffffff !important;
+    border: none !important;
+  }
+  .card-body{
+    margin-top: 6px;
+    padding: 0 !important;
+  }
+  .card-title{
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 8px !important;
+    font-weight: 600;
+  }
+  .card-text{
+    display: none;
+  }
+  .text-price{
+    font-size: 14px;
+    font-weight: 800;
+  }
+  .text-d{
+    font-size: 10px;
+  }
+  .btn-muangay{
+    font-size: 14px !important;
+  }
+  .slider-item{
+    height: 400px;
+  }
 
 }

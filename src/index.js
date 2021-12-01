@@ -16,7 +16,29 @@ const MongoStore = require('connect-mongo')(session);
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-express-handlebars');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 
+
+
+//xác định dung lượng lưu trữ
+// const storage = multer.diskStorage({
+//     destination: function(req, file, callback){
+//         callback(null,'./src/public/img' )
+//     },
+//     //add back extension
+//     filename:function(req, file, callback){
+//         callback(null,Date.now() + file.originalname)
+//     }
+// });
+
+
+// //upload paramater for multer
+// const upload = multer({
+//     storage: storage,
+//     limits:{
+//         fileSize: 1024 * 1024 * 3,
+//     },
+// })
 //connect to db
 
 // db.connect();
