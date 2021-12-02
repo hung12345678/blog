@@ -1,7 +1,6 @@
-
 <div class="row mt-5 mb-5">
-    <div  style="position: relative;" class="col-lg-4">
-         <div class="shopingcart-success">
+    <div style="position: relative;" class="col-lg-4">
+        <div class="shopingcart-success">
             <span>Đã thêm sản phẩm vào giỏ hàng!!!</span>
         </div>
         <div class="divimg">
@@ -23,14 +22,14 @@
                     src="{{course.imageitem3}}" alt=""></li>
         </ul>
     </div>
-   
+
     <div class="mt-2 col-lg-6">
         <h2 class="product-text">{{course.name}}</h2>
         <p>{{course.decripton}}</p>
         <div class="d-flex">
             <h2 class="price-text">{{course.price}}.000&nbsp;</h2>đ/<p>{{course.unit}}</p>
         </div>
-      
+
         {{!-- <div class="d-flex align-items-center">
             <h3 class="mr-4">Số Lượng</h3>
             <div class="d-flex quantity-group">
@@ -53,18 +52,19 @@
                     </a>
                 </span>
             </div>
-          
-        </div> --}} 
+
+        </div> --}}
         <div class="mt-4">
-            <a href="/add-to-cart/{{course._id}}" type="submit" class="btn btn-primary btnmuangay">Mua Ngay</a>
+            <a style="font-size: 20px;
+    width: 100%;" href="/add-to-cart/{{course._id}}" type="submit" class="btn btn-primary btnmuangay">Mua Ngay</a>
         </div>
     </div>
-  
+
     <div class="ml-2 mt-4">
         <h4>Đánh giá sản phẩm</h4>
-    </div> 
+    </div>
 </div>
-   
+
 <div class="modal1">
     <div class="model1-main">
         <div class="modal1-item">
@@ -89,13 +89,13 @@
             imgcenter.src = imgitem.src;
         })
     })
-    btnmuangay.onclick = function (){
+    btnmuangay.onclick = function () {
         shopingcartsuccess.classList.add('activeSuccess');
     }
-    modal.onclick = function(){
+    modal.onclick = function () {
         modal.style.display = "none";
     }
-    modal1main.addEventListener('click', function(e){
+    modal1main.addEventListener('click', function (e) {
         e.stopPropagation();
     })
     imgitems.forEach(imgitem => {
