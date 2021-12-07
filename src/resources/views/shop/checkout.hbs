@@ -1,3 +1,4 @@
+{{#if products}}
 <div class="container mt-4">
     <form class="needs-validation" id="frmthanhtoan" name="frmthanhtoan" method="post" action="/shop/checkout">
         <div class="checkout-success">
@@ -21,7 +22,7 @@
         {{!-- <div id="charrge-error" class="alert alert danger hidden">
 
         </div> --}}
-        {{#if products}}
+
         <div class="row">
             <div class="col-md-5 order-md-1 mb-4">
                 <h4 style="font-weight: 500;" class="d-flex justify-content-between align-items-center mb-3 text-dark">
@@ -128,7 +129,8 @@
                     </div>
                     <div class="form-item col-md-12 mb-3">
                         <span style="font-weight: 500;" for="kh_dienthoai">Ghi chú</span>
-                        <textarea style="height: 100px;" type="textaria" class="form-control" name="ghichu" id="ghichu"></textarea>
+                        <textarea style="height: 100px;" type="textaria" class="form-control" name="ghichu"
+                            id="ghichu"></textarea>
                     </div>
                 </div>
                 {{!-- <h4 class="mb-3">Hình thức thanh toán</h4>
@@ -156,18 +158,19 @@
                 <a style="font-siZe: 15px;" href="/" class="btn btn-warning btn-lg btn-block mt-4" name="">Mua Thêm
                     Bánh, Tiếp Tục Mua Hàng ^^</a>
             </div>
-            {{else}}
-            <div class="mt-4 text-center">
-                <h2 class="mb-5 text-info">Không có sản phẩm nào trong giỏ hàng</h2>
-                <image src="http://localhost:3000/img/noproductfound.png"></image>
-                <button style="font-siZe: 15px;" href="/" class="btn btn-info btn-lg btn-block mt-4" name="">
-                    Quay Lại Trang Chủ
-                </button>
-            </div>
-            {{/if}}
+
         </div>
     </form>
 </div>
+{{else}}
+<div class="mt-4 text-center">
+    <h2 class="mb-5 text-info">Không có sản phẩm nào trong giỏ hàng</h2>
+    <image src="https://hinhanh_banhchung.hn.ss.bfcplatform.vn/images/noproductfound.png"></image>
+    <a style="font-siZe: 15px;" href="/" class="btn btn-info btn-lg btn-block mt-4" name="">
+        Quay Lại Trang Chủ
+    </a>
+</div>
+{{/if}}
 
 <script src="http://localhost:3000/javascript/validatior.js"></script>
 <script>

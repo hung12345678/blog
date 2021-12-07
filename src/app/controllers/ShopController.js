@@ -18,17 +18,16 @@ class ShopController {
 
         //         .catch(next);
         if (!req.session.cart) {
-            return res.render('shop/shop-cart', { products: null })
+            return res.render('shop/checkout', { products: null })
         }
         var cart = new Cart(req.session.cart);
-        res.render('shop/shop-cart', { products: cart.generateArray(), totalPrice: cart.totalPrice })
+        res.render('shop/checkout', { products: cart.generateArray(), totalPrice: cart.totalPrice })
         // console.log(this.item.name)
-
     }
 
     checkout(req, res, next) {
         if (!req.session.cart) {
-            return res.redirect('shop/shop-cart')
+            return res.redirect('shop/checkout')
         }
         var cart = new Cart(req.session.cart);
         var errMsg = req.flash('error')[0];
@@ -37,7 +36,7 @@ class ShopController {
     post(req, res, next) {
         var successMsg = req.flash('success')
         if (!req.session.cart) {
-            return res.redirect('shop/shop-cart')
+            return res.redirect('shop/checkout')
         }
         var cart = new Cart(req.session.cart);
         var order = new Order({
@@ -85,7 +84,7 @@ class ShopController {
                     to: "nguyenlamtuyetnhu03@gmail.com",
                     subject: "Test Mail",
                     cc: "vti.software03@gmail.com",
-                    html: `<h2>Đơn Hàng Của A.Hùng Đã Được Tạo + Mã Đơn Hàng: ` + result._id + `</h2>
+                    html: `<h2>Đơn Hàng Của `+result.name+` Đã Được Tạo + Mã Đơn Hàng: ` + result._id + `</h2>
                     <h3>Thời gian tạo: `+ result.createdAt + ` </h3>
                     <h3>1. Thông Tin Khách Hàng</h3>
                     <div>
@@ -125,14 +124,14 @@ class ShopController {
                 }
                 // console.log(mailOption);
                 //test
-                transporter.sendMail(mailOption, function (err, success) {
-                    if (err) {
-                        console.log("Lỗi!!!")
-                    }
-                    else {
-                        console.log("Email send success!!!")
-                    }
-                })
+                // transporter.sendMail(mailOption, function (err, success) {
+                //     if (err) {
+                //         console.log("Lỗi!!!")
+                //     }
+                //     else {
+                //         console.log("Email send success!!!")
+                //     }
+                // })
 
                 req.flash('success', 'Đơn hàng đã được tạo! Oanh Lâm sẽ gọi liền cho bạn nhé ^^!');
                 req.session.cart = null;
