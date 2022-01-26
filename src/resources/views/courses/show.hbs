@@ -83,12 +83,15 @@
     var modal1main = document.querySelector('.model1-main')
     var btnmuangay = document.querySelector('.btnmuangay')
     var shopingcartsuccess = document.querySelector('.shopingcart-success');
-    imgitems.forEach(imgitem => {
-        imgitem.addEventListener('click', (e) => {
-            modal.style.display = "flex";
-            imgcenter.src = imgitem.src;
+    if(window.innerWidth > 1000){
+            imgitems.forEach(imgitem => {
+            imgitem.addEventListener('click', (e) => {
+                modal.style.display = "flex";
+                imgcenter.src = imgitem.src;
+            })
         })
-    })
+    }
+ 
     btnmuangay.onclick = function () {
         shopingcartsuccess.classList.add('activeSuccess');
     }
